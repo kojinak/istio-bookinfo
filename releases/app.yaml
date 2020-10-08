@@ -1,0 +1,13 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: istio-bookinfo
+  namespace: istio-bookinfo
+spec:
+  releaseName: istio-bookinfo
+  chart:
+    git: https://github.com/kojinak/istio-bookinfo
+    ref: master
+    path: charts/istio-bookinfo
+  values:
+    serviceName: istio-bookinfo
